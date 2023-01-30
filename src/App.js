@@ -60,7 +60,7 @@ function App() {
   return (
     <div className="App w-screen h-screen flex flex-col justify-center items-center bg-gray-600">
       <h1 className='text-blue-400 '>Chat House</h1>
-        <ScrollToBottom className='w-96 bg-white text-black h-[400px] overflow-y-scroll'>
+        <ScrollToBottom className='w-full md:w-96 bg-white text-black h-[400px] overflow-y-scroll'>
       <div className='flex flex-col justify-start'>
           {
             chat.map((payload, index) => {
@@ -89,7 +89,7 @@ function App() {
       </div>
       </ScrollToBottom>
       <form onSubmit={sendMsg}>
-        <input type="text" className='w-80 h-10 border mx-3' name="chat" placeholder='send text' value={message} onChange={(e)=> setMessage(e.target.value) } />
+        <input type="text" className='w-60 md:w-80 h-10 border mx-3' name="chat" placeholder='send text' value={message} onChange={(e)=> setMessage(e.target.value) } />
         <button type='submit' className='px-3 py-1 font-bold hover:bg-green-600 border'>send</button>
       </form>
     </div>
