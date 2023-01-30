@@ -66,7 +66,7 @@ function App() {
             chat.map((payload, index) => {
               if(payload.userName === userName){
                 return(
-                  <div style={{maxWidth:"70%"}} className=' h-fit m-1 self-start'>
+                  <div style={{maxWidth:"70%"}} className=' m-1 self-start'>
                     <p key={index} style={{wordWrap: "break-word"}} className=" p-1 bg-gray-300">
                       {payload.message}
                     </p>
@@ -75,7 +75,7 @@ function App() {
                 )
               }else{
                   return (  
-                    <div style={{maxWidth:"70%"}}  className='w-full max-w-3/5 self-end m-1'>
+                    <div style={{maxWidth:"70%"}}  className='self-end m-1'>
                     <p key={index} style={ {wordWrap: "break-word"}} className=" p-1 bg-blue-300">
                       {payload.message}
                     </p>
