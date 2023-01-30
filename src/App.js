@@ -66,8 +66,8 @@ function App() {
             chat.map((payload, index) => {
               if(payload.userName === userName){
                 return(
-                  <div className='w-3/6 h-fit m-1 self-start'>
-                    <p key={index} className=" p-1 bg-gray-300">
+                  <div style={{maxWidth:"70%"}} className=' h-fit m-1 self-start'>
+                    <p key={index} style={{wordWrap: "break-word"}} className=" p-1 bg-gray-300">
                       {payload.message}
                     </p>
                     <p>{payload.date} <span className='font-bold'>You</span></p>
@@ -75,8 +75,8 @@ function App() {
                 )
               }else{
                   return (  
-                    <div className='w-3/6 self-end m-1'>
-                    <p key={index} className=" p-1 bg-blue-300">
+                    <div style={{maxWidth:"70%"}}  className='w-full max-w-3/5 self-end m-1'>
+                    <p key={index} style={ {wordWrap: "break-word"}} className=" p-1 bg-blue-300">
                       {payload.message}
                     </p>
                     <p>{payload.date} <span className='font-bold'>{payload.userName}</span></p>
@@ -88,9 +88,9 @@ function App() {
         
       </div>
       </ScrollToBottom>
-      <form onSubmit={sendMsg}>
-        <input type="text" className='w-60 md:w-80 h-10 border mx-3' name="chat" placeholder='send text' value={message} onChange={(e)=> setMessage(e.target.value) } />
-        <button type='submit' className='px-3 py-1 font-bold hover:bg-green-600 border'>send</button>
+      <form onSubmit={sendMsg} className="w-full md:w-96">
+        <input type="text" className='w-4/5 h-9 border' name="chat" placeholder='send text' value={message} onChange={(e)=> setMessage(e.target.value) } />
+        <button type='submit' className='w-1/5 h-9 px-3 py-1 font-bold hover:bg-green-600 border'>send</button>
       </form>
     </div>
 
